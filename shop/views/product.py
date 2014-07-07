@@ -12,6 +12,7 @@ class ProductDetailView(ShopDetailView):
     found for the subclass.
     """
     model = Product  # It must be the biggest ancestor of the inheritence tree.
+    queryset = Product.objects.filter(active=True)
     generic_template = 'shop/product_detail.html'
 
     def get_template_names(self):
